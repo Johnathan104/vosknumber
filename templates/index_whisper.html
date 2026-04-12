@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Number Recognizer</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        #result { margin-top: 20px; font-size: 18px; }
+        #debug { margin-top: 20px; background: #f0f0f0; padding: 10px; text-align: left; max-height: 200px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <h1>Say a number (1-10)</h1>
+    <button onclick="startRecording()">🎤 Start Recording</button>
+    <div id="result"></div>
+    <div id="debug"></div>
+
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+
+    <script>
+        let audioContext, recorder;
+
+        function log(msg) {
+            console.log(msg);
+            const debug = document.getElementById('debug');
+            debug.innerHTML += msg + '<br>';
+            debug.scrollTop = debug.scrollHeight;
+        }
+
+        async function startRecording() {
+            try {
+                log('Starting recording...');
+                
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                log('Microphone permission granted');
+
+                // 🔥 FORCE 16kHz SAMPLE RATE (IMPORTANT FOR VOSK)
+                audioContext = new (window.AudioContext || window.webkitAudioContext)({
+                    sampleRate: 16000
+                });
+
+                const input = audioContext.createMediaStreamSource(stream);
+
+                // 🔥 FORCE MONO CHANNEL
+                recorder = new Recorder(input, {
+                    numChannels: 1
+                });
+
+                recorder.record();
+                log('Recording started - speak now!');
+
+                setTimeout(() => {
+                    recorder.stop();
+                    log('Recording stopped');
+
+                    stream.getTracks().forEach(track => track.stop());
+
+                    sendAudio();
+                }, 3000);
+
+            } catch (err) {
+                log('ERROR: ' + err.message);
+            }
+        }
+
+        function sendAudio() {
+            recorder.exportWAV((blob) => {
+                log(`WAV created: ${blob.size} bytes`);
+
+                const formData = new FormData();
+                formData.append('audio', blob, 'audio.wav');
+
+                fetch('/recognize', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(data => {
+                    log(`Response: ${JSON.stringify(data)}`);
+
+                    if (data.success) {
+                        document.getElementById('result').innerHTML =
+                            `✓ Recognized: ${data.number}`;
+                    } else {
+                        document.getElementById('result').innerHTML =
+                            `✗ ${data.error || data.text}`;
+                    }
+                })
+                .catch(err => log('Fetch ERROR: ' + err.message));
+            });
+        }
+    </script>
+</body>
+</html>
