@@ -5,6 +5,7 @@ import wave
 from vosk import Model, KaldiRecognizer
 import subprocess
 from flask_cors import CORS
+import os
 
 
 
@@ -39,11 +40,15 @@ def recognize():
             return jsonify({'success': False, 'error': 'No audio file'}), 400
 
         audio_file = request.files['audio']
-        audio_file.save("temp.webm")
+        if os.path.exists("input.webm"):
+            os.remove("input.webm")
+        if os.path.exists("temp.wav"):
+            os.remove("temp.wav")
+        audio_file.save("input.webm")
 
         subprocess.run([
             "ffmpeg",
-            "-i", "temp.webm",
+            "-i", "input.webm",
             "-ar", "16000",
             "-ac", "1",
             "temp.wav"
@@ -58,13 +63,13 @@ def recognize():
             }), 400
 
         rec = KaldiRecognizer(model,16000,'''["knoll", "null",
-                "satu","dua","tiga","em pat",
-                "empa","empat","lima","e nam","enam","tu juh","to jew",
-                "de lapan","delapan","lapan",
-                "sem bilan","sembilan","bilan",
-                "say puluh","sepuluh", "puluh", "say poo luh"
-            ]'''
-        )
+        "satu","dua","tiga","em pat",
+        "empa","empat","lima","e nam","enam","tu juh","to jew",
+        "de lapan","delapan","lapan",
+        "sem bilan","sembilan","bilan",
+        "say puluh","sepuluh", "puluh", "say poo luh"
+    ]'''
+)
 
         text = ""
 
@@ -121,6 +126,3 @@ def health():
         'status': 'healthy',
         'model_loaded': model is not None
     })
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)

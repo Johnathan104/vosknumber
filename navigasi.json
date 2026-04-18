@@ -1,0 +1,878 @@
+{
+  "project": "Smart Accessibility Navigation - SMAN 96 Jakarta",
+  "language": "id-ID",
+  "version": "1.0",
+  "navigation_type": "step_by_step",
+  "start_point": {
+    "id": "start_pintu_masuk",
+    "name": "Pintu Masuk",
+    "floor": "Lt.Dasar",
+    "audio_text": "Anda di pintu masuk."
+  },
+  "floors": {
+    "Lt.Dasar": {
+      "floor_name": "Lantai Dasar",
+      "destinations": [
+        {
+          "id": "dasar_pintu_masuk",
+          "name": "Pintu Masuk",
+          "category": "akses_utama",
+          "from": "start_pintu_masuk",
+          "audio_text": "Anda di pintu masuk.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Anda di pintu masuk."
+            }
+          ]
+        },
+        {
+          "id": "dasar_meja_piket",
+          "name": "Meja Piket Guru",
+          "category": "layanan",
+          "from": "start_pintu_masuk",
+          "audio_text": "Lurus ke depan... sekitar 5 meter... meja piket di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Lurus ke depan."
+            },
+            {
+              "step": 2,
+              "text": "Sekitar 5 meter."
+            },
+            {
+              "step": 3,
+              "text": "Meja piket di kanan."
+            }
+          ]
+        },
+        {
+          "id": "dasar_lift",
+          "name": "Lift menuju Lt.1, Lt.2, dan Lt.3",
+          "category": "akses_vertikal",
+          "from": "start_pintu_masuk",
+          "audio_text": "Lurus ke depan... lewati meja piket... lanjut ke ujung koridor... belok kanan... lift di depan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Lurus ke depan."
+            },
+            {
+              "step": 2,
+              "text": "Lewati meja piket."
+            },
+            {
+              "step": 3,
+              "text": "Lanjut ke ujung koridor."
+            },
+            {
+              "step": 4,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 5,
+              "text": "Lift di depan."
+            }
+          ]
+        },
+        {
+          "id": "dasar_kelas_a",
+          "name": "Ruang Kelas A",
+          "category": "kelas",
+          "from": "dasar_lift",
+          "audio_text": "Dari lift... belok kiri... lurus sedikit... kelas A di kiri.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Dari lift."
+            },
+            {
+              "step": 2,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 3,
+              "text": "Lurus sedikit."
+            },
+            {
+              "step": 4,
+              "text": "Kelas A di kiri."
+            }
+          ]
+        },
+        {
+          "id": "dasar_kelas_b",
+          "name": "Ruang Kelas B",
+          "category": "kelas",
+          "from": "dasar_lift",
+          "audio_text": "Dari lift... belok kanan... lurus sedikit... kelas B di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Dari lift."
+            },
+            {
+              "step": 2,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 3,
+              "text": "Lurus sedikit."
+            },
+            {
+              "step": 4,
+              "text": "Kelas B di kanan."
+            }
+          ]
+        }
+      ]
+    },
+    "Lt.1": {
+      "floor_name": "Lantai 1",
+      "lift_arrival": {
+        "audio_text": "Anda di lantai 1... keluar dari lift.",
+        "steps": [
+          {
+            "step": 1,
+            "text": "Anda di lantai 1."
+          },
+          {
+            "step": 2,
+            "text": "Keluar dari lift."
+          }
+        ]
+      },
+      "destinations": [
+        {
+          "id": "lt1_lift",
+          "name": "Lift Lt.1",
+          "category": "akses_vertikal",
+          "from": "dasar_lift",
+          "audio_text": "Anda di lantai 1... keluar dari lift.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Anda di lantai 1."
+            },
+            {
+              "step": 2,
+              "text": "Keluar dari lift."
+            }
+          ]
+        },
+        {
+          "id": "lt1_kelas_c",
+          "name": "Ruang Kelas C",
+          "category": "kelas",
+          "from": "lt1_lift",
+          "audio_text": "Belok kanan... lurus... kelas C di kiri.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas C di kiri."
+            }
+          ]
+        },
+        {
+          "id": "lt1_kelas_d",
+          "name": "Ruang Kelas D",
+          "category": "kelas",
+          "from": "lt1_lift",
+          "audio_text": "Belok kanan... lanjut lurus... kelas D di kiri.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Lanjut lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas D di kiri."
+            }
+          ]
+        },
+        {
+          "id": "lt1_kelas_e",
+          "name": "Ruang Kelas E",
+          "category": "kelas",
+          "from": "lt1_lift",
+          "audio_text": "Belok kanan... ke ujung koridor... kelas E di depan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Ke ujung koridor."
+            },
+            {
+              "step": 3,
+              "text": "Kelas E di depan."
+            }
+          ]
+        },
+        {
+          "id": "lt1_lab_kimia",
+          "name": "Lab Kimia",
+          "category": "laboratorium",
+          "from": "lt1_lift",
+          "audio_text": "Belok kiri... lurus... lab kimia di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Lab kimia di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt1_lab_biologi",
+          "name": "Lab Biologi",
+          "category": "laboratorium",
+          "from": "lt1_lift",
+          "audio_text": "Belok kiri... lurus... lab biologi di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Lab biologi di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt1_lab_fisika",
+          "name": "Lab Fisika",
+          "category": "laboratorium",
+          "from": "lt1_lift",
+          "audio_text": "Belok kiri... lanjut lurus... lab fisika di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lanjut lurus."
+            },
+            {
+              "step": 3,
+              "text": "Lab fisika di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt1_lab_komputer",
+          "name": "Lab Komputer",
+          "category": "laboratorium",
+          "from": "lt1_lift",
+          "audio_text": "Belok kiri... ke ujung koridor... lab komputer di depan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Ke ujung koridor."
+            },
+            {
+              "step": 3,
+              "text": "Lab komputer di depan."
+            }
+          ]
+        },
+        {
+          "id": "lt1_toilet_disabilitas",
+          "name": "Toilet Disabilitas",
+          "category": "fasilitas",
+          "from": "lt1_lift",
+          "audio_text": "Belok kiri... ke ujung... toilet di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Ke ujung."
+            },
+            {
+              "step": 3,
+              "text": "Toilet di kanan."
+            }
+          ]
+        }
+      ]
+    },
+    "Lt.2": {
+      "floor_name": "Lantai 2",
+      "lift_arrival": {
+        "audio_text": "Anda di lantai 2... keluar dari lift.",
+        "steps": [
+          {
+            "step": 1,
+            "text": "Anda di lantai 2."
+          },
+          {
+            "step": 2,
+            "text": "Keluar dari lift."
+          }
+        ]
+      },
+      "destinations": [
+        {
+          "id": "lt2_lift",
+          "name": "Lift Lt.2",
+          "category": "akses_vertikal",
+          "from": "dasar_lift",
+          "audio_text": "Anda di lantai 2... keluar dari lift.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Anda di lantai 2."
+            },
+            {
+              "step": 2,
+              "text": "Keluar dari lift."
+            }
+          ]
+        },
+        {
+          "id": "lt2_kelas_f",
+          "name": "Ruang Kelas F",
+          "category": "kelas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kanan... lurus... kelas F di kiri.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas F di kiri."
+            }
+          ]
+        },
+        {
+          "id": "lt2_kelas_g",
+          "name": "Ruang Kelas G",
+          "category": "kelas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kanan... lanjut lurus... kelas G di kiri.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Lanjut lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas G di kiri."
+            }
+          ]
+        },
+        {
+          "id": "lt2_kelas_h",
+          "name": "Ruang Kelas H",
+          "category": "kelas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kanan... ke ujung koridor... kelas H di depan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Ke ujung koridor."
+            },
+            {
+              "step": 3,
+              "text": "Kelas H di depan."
+            }
+          ]
+        },
+        {
+          "id": "lt2_kelas_i",
+          "name": "Ruang Kelas I",
+          "category": "kelas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kiri... lurus... kelas I di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas I di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt2_kelas_j",
+          "name": "Ruang Kelas J",
+          "category": "kelas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kiri... lanjut lurus... kelas J di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lanjut lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas J di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt2_kelas_k",
+          "name": "Ruang Kelas K",
+          "category": "kelas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kiri... lurus lebih jauh... kelas K di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus lebih jauh."
+            },
+            {
+              "step": 3,
+              "text": "Kelas K di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt2_kelas_l",
+          "name": "Ruang Kelas L",
+          "category": "kelas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kiri... ke bagian ujung... kelas L di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Ke bagian ujung."
+            },
+            {
+              "step": 3,
+              "text": "Kelas L di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt2_toilet_disabilitas",
+          "name": "Toilet Disabilitas",
+          "category": "fasilitas",
+          "from": "lt2_lift",
+          "audio_text": "Belok kiri... ke ujung... toilet di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Ke ujung."
+            },
+            {
+              "step": 3,
+              "text": "Toilet di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt2_ruang_ekskul",
+          "name": "Ruang Ekstrakurikuler",
+          "category": "ruang_kegiatan",
+          "from": "lt2_lift",
+          "audio_text": "Belok kiri... lurus sampai ujung koridor... ruang ekstrakurikuler di area ujung.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus sampai ujung koridor."
+            },
+            {
+              "step": 3,
+              "text": "Ruang ekstrakurikuler di area ujung."
+            }
+          ]
+        },
+        {
+          "id": "lt2_ruang_osis",
+          "name": "Ruang OSIS",
+          "category": "ruang_organisasi",
+          "from": "lt2_lift",
+          "audio_text": "Belok kiri... lurus... ruang OSIS di depan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Ruang OSIS di depan."
+            }
+          ]
+        }
+      ]
+    },
+    "Lt.3": {
+      "floor_name": "Lantai 3",
+      "lift_arrival": {
+        "audio_text": "Anda di lantai 3... keluar dari lift.",
+        "steps": [
+          {
+            "step": 1,
+            "text": "Anda di lantai 3."
+          },
+          {
+            "step": 2,
+            "text": "Keluar dari lift."
+          }
+        ]
+      },
+      "destinations": [
+        {
+          "id": "lt3_lift",
+          "name": "Lift Lt.3",
+          "category": "akses_vertikal",
+          "from": "dasar_lift",
+          "audio_text": "Anda di lantai 3... keluar dari lift.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Anda di lantai 3."
+            },
+            {
+              "step": 2,
+              "text": "Keluar dari lift."
+            }
+          ]
+        },
+        {
+          "id": "lt3_kelas_m",
+          "name": "Ruang Kelas M",
+          "category": "kelas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kanan... lurus... kelas M di kiri.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas M di kiri."
+            }
+          ]
+        },
+        {
+          "id": "lt3_kelas_n",
+          "name": "Ruang Kelas N",
+          "category": "kelas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kanan... lanjut lurus... kelas N di kiri.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Lanjut lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas N di kiri."
+            }
+          ]
+        },
+        {
+          "id": "lt3_kelas_o",
+          "name": "Ruang Kelas O",
+          "category": "kelas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kanan... ke ujung koridor... kelas O di depan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kanan."
+            },
+            {
+              "step": 2,
+              "text": "Ke ujung koridor."
+            },
+            {
+              "step": 3,
+              "text": "Kelas O di depan."
+            }
+          ]
+        },
+        {
+          "id": "lt3_kelas_p",
+          "name": "Ruang Kelas P",
+          "category": "kelas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kiri... lurus... kelas P di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas P di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt3_kelas_q",
+          "name": "Ruang Kelas Q",
+          "category": "kelas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kiri... lanjut lurus... kelas Q di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lanjut lurus."
+            },
+            {
+              "step": 3,
+              "text": "Kelas Q di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt3_kelas_r",
+          "name": "Ruang Kelas R",
+          "category": "kelas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kiri... lurus lebih jauh... kelas R di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Lurus lebih jauh."
+            },
+            {
+              "step": 3,
+              "text": "Kelas R di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt3_kelas_s",
+          "name": "Ruang Kelas S",
+          "category": "kelas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kiri... ke bagian ujung... kelas S di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Ke bagian ujung."
+            },
+            {
+              "step": 3,
+              "text": "Kelas S di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt3_toilet_disabilitas",
+          "name": "Toilet Disabilitas",
+          "category": "fasilitas",
+          "from": "lt3_lift",
+          "audio_text": "Belok kiri... dekat ujung... toilet di kanan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Dekat ujung."
+            },
+            {
+              "step": 3,
+              "text": "Toilet di kanan."
+            }
+          ]
+        },
+        {
+          "id": "lt3_perpustakaan",
+          "name": "Ruang Perpustakaan",
+          "category": "fasilitas_pembelajaran",
+          "from": "lt3_lift",
+          "audio_text": "Belok kiri... ke ujung... perpustakaan di depan.",
+          "steps": [
+            {
+              "step": 1,
+              "text": "Belok kiri."
+            },
+            {
+              "step": 2,
+              "text": "Ke ujung."
+            },
+            {
+              "step": 3,
+              "text": "Perpustakaan di depan."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "lift_navigation": {
+    "from_ground_to_lift": {
+      "audio_text": "Dari pintu masuk... lewati meja piket... lurus terus... di pojok kanan ada lift.",
+      "steps": [
+        {
+          "step": 1,
+          "text": "Dari pintu masuk."
+        },
+        {
+          "step": 2,
+          "text": "Lewati meja piket."
+        },
+        {
+          "step": 3,
+          "text": "Lurus terus."
+        },
+        {
+          "step": 4,
+          "text": "Di pojok kanan ada lift."
+        }
+      ]
+    },
+    "to_floor_1": {
+      "audio_text": "Naik ke lantai 1... keluar dari lift... belok kanan atau kiri sesuai tujuan kelas, lab, atau toilet.",
+      "steps": [
+        {
+          "step": 1,
+          "text": "Naik ke lantai 1."
+        },
+        {
+          "step": 2,
+          "text": "Keluar dari lift."
+        },
+        {
+          "step": 3,
+          "text": "Belok kanan atau kiri sesuai tujuan kelas, lab, atau toilet."
+        }
+      ]
+    },
+    "to_floor_2": {
+      "audio_text": "Naik ke lantai 2... keluar dari lift... belok kanan atau kiri sesuai tujuan kelas, ruang ekskul, ruang OSIS, atau toilet.",
+      "steps": [
+        {
+          "step": 1,
+          "text": "Naik ke lantai 2."
+        },
+        {
+          "step": 2,
+          "text": "Keluar dari lift."
+        },
+        {
+          "step": 3,
+          "text": "Belok kanan atau kiri sesuai tujuan kelas, ruang ekskul, ruang OSIS, atau toilet."
+        }
+      ]
+    },
+    "to_floor_3": {
+      "audio_text": "Naik ke lantai 3... keluar dari lift... belok kanan atau kiri sesuai tujuan kelas, perpustakaan, atau toilet.",
+      "steps": [
+        {
+          "step": 1,
+          "text": "Naik ke lantai 3."
+        },
+        {
+          "step": 2,
+          "text": "Keluar dari lift."
+        },
+        {
+          "step": 3,
+          "text": "Belok kanan atau kiri sesuai tujuan kelas, perpustakaan, atau toilet."
+        }
+      ]
+    }
+  }
+}
